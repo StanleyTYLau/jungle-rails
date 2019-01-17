@@ -28,12 +28,12 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
        
-        <% if current_user %>
+        <% if @current_user %>
           <li>
             Signed in as <%= current_user.name %>
           </li>
           <li>
-            <%= link_to "Logout", new_session_path %>
+            <%= link_to "Logout", [:new, :session] %>
           </li>
         <% else %>
           <li>
