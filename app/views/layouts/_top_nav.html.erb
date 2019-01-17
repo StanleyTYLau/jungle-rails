@@ -33,7 +33,7 @@
             Signed in as <%= current_user.firstname %> <%= current_user.lastname %>
           </li>
           <li>
-            <%= link_to "Logout", [:new, :session] %>
+            <%= link_to "Logout", session_path(current_user.id), method: "delete" %>
           </li>
         <% else %>
           <li>
