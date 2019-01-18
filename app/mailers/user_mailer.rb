@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
 
   
 
-  def welcome_email(user, order)
+  def order_email(user, order)
     @user = user
     @order = order
     @products = LineItem.where(order_id: order.id)
