@@ -25,14 +25,17 @@
         </dl>
       </div>
     </div>
-    <div class="row">
-      <h4>Leave your review</h4>
-      <%= form_for :review, url: "/products/#{@product.id}/reviews" do |f| %>
-        Rating: <%= f.select :rating, [1, 2, 3, 4, 5] %><br>
-        Description: <%= f.text_field :description %><br>
-        <%= f.submit "Submit" %>
-      <% end %>
-    </div>
+    <% if @current_user then %>
+      <div class="row">
+        <h4>Leave your review</h4>
+        <%= form_for :review, url: "/products/#{@product.id}/reviews" do |f| %>
+          Rating: <%= f.select :rating, [1, 2, 3, 4, 5] %><br>
+          Description: <%= f.text_field :description %><br>
+          <%= f.submit "Submit" %>
+        <% end %>
+      </div>
+    <% end %>
+    
     <div class="row">
       <h4>Reviews</h4>
 
