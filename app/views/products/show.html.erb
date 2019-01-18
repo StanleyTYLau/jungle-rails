@@ -25,6 +25,25 @@
         </dl>
       </div>
     </div>
+    
+    <div class="row">
+      <h4>Reviews</h4>
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Rating</th>
+            <th>Description</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% @reviews.each do |item| %>
+            <%= render 'review', review: item %>
+          <% end %>
+        <tbody>
+      </table>
+    </div>
 
   </article>
 

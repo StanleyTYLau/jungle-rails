@@ -35,6 +35,7 @@ puts "Re-creating Products ..."
 
 Product.destroy_all
 
+pro1 =
 cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
@@ -43,6 +44,7 @@ cat1.products.create!({
   price: 64.99
 })
 
+pro2 =
 cat1.products.create!({
   name:  'Women\'s Zebra pants',
   description: Faker::Hipster.paragraph(4),
@@ -136,29 +138,29 @@ cat3.products.create!({
 puts "Re-creating Reviews ..."
 Review.destroy_all
 
-Review.create!({
-  product_id: 1,
+pro1.review.create!({
+  product_id: 14,
   user_id: 1,
   description: "What a piece of work!",
   rating: 5
 })
 
-Review.create!({
-  product_id: 1,
+pro1.review.create!({
+  product_id: 14,
   user_id: 2,
   description: "This doesn't work",
   rating: 1
 })
 
-Review.create!({
-  product_id: 2,
+pro2.review.create!({
+  product_id: 15,
   user_id: 1,
   description: "Best purchase of my life!",
   rating: 5
 })
 
-Review.create!({
-  product_id: 2,
+pro2.review.create!({
+  product_id: 15,
   user_id: 2,
   description: "This was super OK!",
   rating: 3
