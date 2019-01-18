@@ -29,3 +29,4 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 rake db:setup
 rake db:reset (recreate and reseed)
+rake db:migrate
