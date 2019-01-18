@@ -6,13 +6,14 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.preview.subject
   #
 
-  default from: 'notifications@example.com'
+  default from: 'no-reply@jungle.com'
 
   
 
   def welcome_email(user, order)
     @user = user
     @order = order
+    @products = LineItem.where(order_id: order.id)
     mail(to: @user.email, subject: "Jungle Purchase Confirmed - Order: #{order.id}")
   end
 end
