@@ -138,28 +138,28 @@ cat3.products.create!({
 puts "Re-creating Reviews ..."
 Review.destroy_all
 
-pro1.review.create!({
+pro1.reviews.create!({
   product_id: 14,
   user_id: 1,
   description: "What a piece of work!",
   rating: 5
 })
 
-pro1.review.create!({
+pro1.reviews.create!({
   product_id: 14,
   user_id: 2,
   description: "This doesn't work",
   rating: 1
 })
 
-pro2.review.create!({
+pro2.reviews.create!({
   product_id: 15,
   user_id: 1,
   description: "Best purchase of my life!",
   rating: 5
 })
 
-pro2.review.create!({
+pro2.reviews.create!({
   product_id: 15,
   user_id: 2,
   description: "This was super OK!",
