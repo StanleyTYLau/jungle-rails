@@ -25,7 +25,14 @@
         </dl>
       </div>
     </div>
-    
+    <div class="row">
+      <h4>Leave your review</h4>
+      <%= form_for :review, url: '/products/5/reviews' do |f| %>
+        Rating: <%= f.select :rating, [1, 2, 3, 4, 5] %><br>
+        Description: <%= f.text_field :description %><br>
+        <%= f.submit "Submit" %>
+      <% end %>
+    </div>
     <div class="row">
       <h4>Reviews</h4>
 
