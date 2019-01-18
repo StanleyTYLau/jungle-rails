@@ -8,16 +8,11 @@ class UserMailer < ApplicationMailer
 
   default from: 'notifications@example.com'
 
-  def preview
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
-  end
+  
 
   def welcome_email(user, order)
     @user = user
     @order = order
-    @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: 'Jungle Purchase Confirmed - Order: #{@order.id}')
+    mail(to: @user.email, subject: "Jungle Purchase Confirmed - Order: #{order.id}")
   end
 end
