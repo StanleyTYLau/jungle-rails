@@ -1,10 +1,18 @@
 <tr>
   <td>
-    <%= review.rating %>
+    <%= review.rating %>/5
   </td>
   <td>
     <%= review.description %>
   </td>
- 
-
+  <% if current_user.id == review.user_id then %>
+    <td>
+      <%= button_to product_review_path(review.product_id, review.id), 
+        class: 'btn btn-primary', 
+        method: "delete" do 
+      %>
+        <%= fa_icon "trash", text: 'Delete' %>
+      <% end %>
+    </td>
+  <% end %>
 </tr>
