@@ -28,6 +28,7 @@ RSpec.feature "Visitor navigates to product page", type: :feature, js: true do
 
       #VERIFY
       expect(page).to have_css 'article.product-detail'
+      expect(page).to have_current_path(product_path(@item.id))
     end
 
 end
