@@ -20,15 +20,12 @@ RSpec.feature "Visitor navigates to product page", type: :feature, js: true do
       # ACT
       visit root_path
       first('article header').click
-      sleep 3
-
-
-      # DEBUG
-      save_and_open_screenshot
-
+      sleep 2
+      
       #VERIFY
       expect(page).to have_css 'article.product-detail'
       expect(page).to have_current_path(product_path(@item.id))
+      save_and_open_screenshot
     end
 
 end
